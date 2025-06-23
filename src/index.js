@@ -1,11 +1,22 @@
+function displayStory(response) {
+  new Typewriter("#story", {
+    strings: response.data.answer,
+    autoStart: true,
+    Delay: 20,
+  });
+}
+
 function generateStory(event) {
   event.preventDefault();
 
-  new Typewriter("#story", {
-    strings: "Winston is a fat cat",
-    autoStart: true,
-    Delay: 1,
-  });
+  let topicElement = document.querySelector("#topic-form-input");
+  let apiKey = "3b0e0f1639296410oabf7a45tcd4001b";
+  let context =
+    "You are a romantic AI author that creates stories that are unique and short";
+  let prompt = `Write 4 short sentences about ${topicElement.value}. Style in basic HTML without saying HTML and each sentence on a new line. Sign the bottom with " - ❤️ AI"`;
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  axios.get(apiUrl).then(displayStory);
 }
 
 let storyFormElement = document.querySelector("#story-generator-form");
