@@ -16,6 +16,10 @@ function generateStory(event) {
   let prompt = `Write 4 short sentences about ${topicElement.value}. Style in basic HTML without saying HTML and each sentence on a new line. Sign the bottom with " - ❤️ AI"`;
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  let storyElement = document.querySelector("#story");
+  storyElement.classList.remove("hidden");
+  storyElement.innerHTML = `<div class="blink">✍️ Generating a short story about ${topicElement.value}....</div>`;
+
   axios.get(apiUrl).then(displayStory);
 }
 

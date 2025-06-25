@@ -21,20 +21,23 @@
         <h1>AI Short Story Generator</h1>
       </header>
       <main>
-        <form id="story-generator-form">
-          <input
-            type="text"
-            placeholder="Enter your topic here..."
-            autofocus
-            required
-            autocomplete="off"
-            class="topic"
-            id="topic-form-input"
-          />
-          <input type="submit" class="submit-button" id="submit-button" />
-        </form>
+        <div class="form-container">
+          <form id="story-generator-form">
+            <input
+              type="text"
+              placeholder="Enter your topic of choice here..."
+              autofocus
+              required
+              autocomplete="off"
+              class="topic"
+              id="topic-form-input"
+            />
+            <input type="submit" class="submit-button" id="submit-button" />
+          </form>
 
-        <div class="story" id="story"></div>
+          <div class="example">For example: Dogs, flowers, black cats...</div>
+        </div>
+        <div class="story hidden"  id="story"></div>
       </main>
 
       <footer>
