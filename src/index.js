@@ -2,7 +2,8 @@ function displayStory(response) {
   new Typewriter("#story", {
     strings: response.data.answer,
     autoStart: true,
-    Delay: 20,
+    delay: 5,
+    cursor: "",
   });
 }
 
