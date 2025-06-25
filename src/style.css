@@ -85,10 +85,9 @@ footer {
   background-color: #f8f2ee;
   border-radius: 5px;
 }
-
 @keyframes blink {
   50% {
-    opacity: 0.0;
+    opacity: 0;
   }
 }
 .blink {
